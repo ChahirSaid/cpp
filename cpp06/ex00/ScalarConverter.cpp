@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 20:35:05 by schahir           #+#    #+#             */
-/*   Updated: 2026/02/02 21:09:42 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/04 23:19:00 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@ ScalarConverter::~ScalarConverter(){}
 
 static void floatingpoint(std::string& str, int x)
 {
-    
+    size_t i = 0;
+    if (str[i] == '+' || str[i] == '-')
+        i++;
+    while(str[i - x] && (isdigit(str[i]) || str[i] == '.'))
+        i++;
+    if (str[i + x])
+        std::cout << (x ? "float error\n" : "double error\n");
 }
 
 void convert(std::string to_convert)
@@ -35,7 +41,7 @@ void convert(std::string to_convert)
         return std::cout << "no string provided\n", (void)0;
     if (to_convert.size() > 1)
     {
-        cout << "char: error\n";
+        std::cout << "char: error\n";
         goto floatconverter;
     }
     
@@ -48,7 +54,7 @@ void convert(std::string to_convert)
         std::cout << "float: error\ndouble: error\n";
         return;
     }
-    pos = to_convert.find(".", pos)
+    pos = to_convert.find(".", pos);
     if (pos != -1)
     {
         std::cout << "float: error\ndouble: error\n";

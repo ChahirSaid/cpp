@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:11:04 by schahir           #+#    #+#             */
-/*   Updated: 2025/11/23 22:42:38 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/05 01:15:45 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int Account::_totalNbWithdrawals = 0;
 Account::Account(int initial_deposit)
 {
     _accountIndex = _nbAccounts++;
-    _amount += initial_deposit;
+    _amount = initial_deposit;
     _nbDeposits = 0;
     _nbWithdrawals = 0;
     _totalAmount += initial_deposit;

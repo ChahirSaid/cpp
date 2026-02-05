@@ -1,7 +1,7 @@
 NAME = bank
 
 CXX = c++
-CXXFLAGS =  -std=c++98
+CXXFLAGS =  -Wall -Wextra -Werror -std=c++98
 
 SRC = Account.cpp tests.cpp
 OBJ = $(SRC:.cpp=.o)

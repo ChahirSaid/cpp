@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:11:56 by schahir           #+#    #+#             */
-/*   Updated: 2025/12/10 11:11:47 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/05 02:17:28 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,25 +89,32 @@ bool Fixed::operator!=(const Fixed &other) const
 
 Fixed Fixed::operator+(const Fixed &other) const
 {
-    return Fixed(this->_value + other._value);
+    Fixed result;
+    result.setRawBits(this->_value + other._value);
+    return result;
 }
 
 Fixed Fixed::operator*(const Fixed &other) const
 {
-    int res = this->_value * other._value;
-    return Fixed(res >> _bits);
+    Fixed result;
+    long long res = (long long)this->_value * other._value;
+    result.setRawBits(res >> _bits);
+    return result;
 }
 
 Fixed Fixed::operator-(const Fixed &other) const
 {
-     return Fixed(this->_value - other._value);
+    Fixed result;
+    result.setRawBits(this->_value - other._value);
+    return result;
 }
 
 Fixed Fixed::operator/(const Fixed &other) const
 {
-    int num = this->_value << _bits;
-    int res = num / other._value;
-    return Fixed(res);
+    Fixed result;
+    long long num = (long long)this->_value << _bits;
+    result.setRawBits(num / other._value);
+    return result;
 }
 
 Fixed& Fixed::operator++()

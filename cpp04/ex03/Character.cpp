@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 16:05:43 by schahir           #+#    #+#             */
-/*   Updated: 2025/12/20 16:48:36 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/05 02:35:53 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || !_inventory[idx])
 		return ;
 	_inventory[idx] = NULL;
 }

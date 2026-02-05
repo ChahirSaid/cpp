@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:43:31 by schahir           #+#    #+#             */
-/*   Updated: 2025/11/23 16:22:14 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/05 01:58:12 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ class  Contact
         std::string get_number() const;
         std::string get_secret() const;
 
-        bool validate_form() const;
-        bool validate_number() const;
 };
 
 #endif

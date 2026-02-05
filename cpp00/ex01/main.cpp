@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:57:06 by schahir           #+#    #+#             */
-/*   Updated: 2025/11/23 15:47:10 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/05 02:02:04 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,45 @@ Contact add(int *flag)
 {
     std::string buffer;
     Contact fill;
+    firstname:
     std::cout <<"first name -> " << std::endl;
     if (!std::getline(std::cin, buffer))
        return (*flag = 1, fill);
+    if (buffer.empty())
+        goto firstname;
     fill.set_fname(buffer);
+    lastname:
     std::cout <<"last name -> " << std::endl;
     if (!std::getline(std::cin, buffer))
        return (*flag = 1, fill);
+    if (buffer.empty())
+        goto lastname;
     fill.set_lname(buffer);
+    nickname:
     std::cout <<"nickname -> " << std::endl;
     if (!std::getline(std::cin, buffer))
        return (*flag = 1, fill);
+    if (buffer.empty())
+        goto nickname;
     fill.set_nickname(buffer);
+    number:
     std::cout <<"number -> " << std::endl;
     if (!std::getline(std::cin, buffer))
        return (*flag = 1, fill);
+    if (buffer.empty())
+        goto number;
+    for(size_t i = 0; i < buffer.size(); i++)
+    {
+        if (!std::isdigit(buffer[i]))
+            goto number;
+    }
     fill.set_number(buffer);
+    secret:
     std::cout <<"darkest secret -> " << std::endl;
     if (!std::getline(std::cin, buffer))
        return (*flag = 1, fill);
+    if (buffer.empty())
+        goto secret;
     fill.set_secret(buffer);
     return fill;
 }
@@ -59,16 +79,6 @@ int main()
             c = add(&flag);
             if (flag)
                 break;
-            if (c.validate_form())
-            {
-                std::cout << "Error: field must contain at least one character" << std::endl;
-                continue;
-            }
-            if (!c.validate_number())
-            {
-                std::cout << "Error: Phone number must only contain digits" << std::endl;
-                continue;
-            }
             pb.add_contact(c);
             std::cout << "contact added successfully" << std::endl;
         }

@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:51:36 by schahir           #+#    #+#             */
-/*   Updated: 2025/11/21 17:55:22 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/05 01:58:08 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,4 @@ std::string Contact::get_number() const
 std::string Contact::get_secret() const
 {
     return _secret;
-}
-
-bool Contact::validate_form() const
-{
-    return (_fname.empty() || _lname.empty() || _nickname.empty() || _number.empty() || _secret.empty());
-}
-
-bool Contact::validate_number() const
-{
-    for(size_t i= 0;i<_number.size();i++)
-    {
-        if (!std::isdigit(_number[i]))
-            return false;
-    }
-    return true;
 }

@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:57:06 by schahir           #+#    #+#             */
-/*   Updated: 2026/02/05 02:02:04 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/05 02:07:28 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,45 @@ Contact add(int *flag)
     std::string buffer;
     Contact fill;
     firstname:
-    std::cout <<"first name -> " << std::endl;
-    if (!std::getline(std::cin, buffer))
-       return (*flag = 1, fill);
-    if (buffer.empty())
-        goto firstname;
-    fill.set_fname(buffer);
+        std::cout <<"first name -> " << std::endl;
+        if (!std::getline(std::cin, buffer))
+        return (*flag = 1, fill);
+        if (buffer.empty())
+            goto firstname;
+        fill.set_fname(buffer);
     lastname:
-    std::cout <<"last name -> " << std::endl;
-    if (!std::getline(std::cin, buffer))
-       return (*flag = 1, fill);
-    if (buffer.empty())
-        goto lastname;
-    fill.set_lname(buffer);
+        std::cout <<"last name -> " << std::endl;
+        if (!std::getline(std::cin, buffer))
+        return (*flag = 1, fill);
+        if (buffer.empty())
+            goto lastname;
+        fill.set_lname(buffer);
     nickname:
-    std::cout <<"nickname -> " << std::endl;
-    if (!std::getline(std::cin, buffer))
-       return (*flag = 1, fill);
-    if (buffer.empty())
-        goto nickname;
-    fill.set_nickname(buffer);
+        std::cout <<"nickname -> " << std::endl;
+        if (!std::getline(std::cin, buffer))
+        return (*flag = 1, fill);
+        if (buffer.empty())
+            goto nickname;
+        fill.set_nickname(buffer);
     number:
-    std::cout <<"number -> " << std::endl;
-    if (!std::getline(std::cin, buffer))
-       return (*flag = 1, fill);
-    if (buffer.empty())
-        goto number;
-    for(size_t i = 0; i < buffer.size(); i++)
-    {
-        if (!std::isdigit(buffer[i]))
+        std::cout <<"number -> " << std::endl;
+        if (!std::getline(std::cin, buffer))
+        return (*flag = 1, fill);
+        if (buffer.empty())
             goto number;
-    }
-    fill.set_number(buffer);
+        for(size_t i = 0; i < buffer.size(); i++)
+        {
+            if (!std::isdigit(buffer[i]))
+                goto number;
+        }
+        fill.set_number(buffer);
     secret:
-    std::cout <<"darkest secret -> " << std::endl;
-    if (!std::getline(std::cin, buffer))
-       return (*flag = 1, fill);
-    if (buffer.empty())
-        goto secret;
-    fill.set_secret(buffer);
+        std::cout <<"darkest secret -> " << std::endl;
+        if (!std::getline(std::cin, buffer))
+        return (*flag = 1, fill);
+        if (buffer.empty())
+            goto secret;
+        fill.set_secret(buffer);
     return fill;
 }
 

@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 20:35:08 by schahir           #+#    #+#             */
-/*   Updated: 2026/02/01 20:52:50 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/08 05:57:07 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 # define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <climits>
+#include <cmath>
+#include <iomanip>
+
+enum e_type
+{
+    CHAR,
+    INT,
+    FLOAT,
+    DOUBLE,
+    SPECIAL
+};
 
 class ScalarConverter
 {

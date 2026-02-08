@@ -49,13 +49,12 @@ static int detectType(const std::string& str)
         return SPECIAL;
     if (str.size() == 1 && !isdigit(str[0]))
         return CHAR;
-    if (str.size() > 1 && str[str.size() - 1] == 'f')
+    if (str.size() > 1 && str.find('.') != std::string::npos)
     {
-        if (str.find('.') != std::string::npos)
+        if (str[str.size() - 1] == 'f')
             return FLOAT;
-    }
-    if (str.find('.') != std::string::npos)
         return DOUBLE;
+    }
     return INT;
 }
 
@@ -100,13 +99,11 @@ void ScalarConverter::convert(std::string to_convert)
 {
     if (to_convert.empty())
     {
-        std::cout << "no string provided" << std::endl;
+        std::cerr << "no string provided" << std::endl;
         return;
     }
-    
     int type = detectType(to_convert);
     double value = 0;
-    
     switch (type)
     {
         case CHAR:
@@ -114,7 +111,6 @@ void ScalarConverter::convert(std::string to_convert)
             value = static_cast<double>(to_convert[0]);
             break;
         }
-        
         case INT:
         {
             size_t pos = to_convert.find(".");
@@ -143,22 +139,18 @@ void ScalarConverter::convert(std::string to_convert)
                 std::cout << (type == FLOAT ? "float" : "double") << ": error" << std::endl;
                 return;
             }
-            
             pos = to_convert.find(".", pos + 1);
             if (pos != std::string::npos)
             {
                 std::cout << (type == FLOAT ? "float" : "double") << ": error" << std::endl;
                 return;
             }
-            
             int x = (type == FLOAT) ? 1 : 0;
-            
             if (!floatingpoint(to_convert, x))
             {
                 std::cout << (type == FLOAT ? "float" : "double") << ": error" << std::endl;
                 return;
             }
-            
             if (type == FLOAT)
                 value = std::strtof(to_convert.c_str(), NULL);
             else
@@ -166,13 +158,11 @@ void ScalarConverter::convert(std::string to_convert)
             
             break;
         }
-        
         case SPECIAL:
         {
             value = std::strtod(to_convert.c_str(), NULL);
             break;
         }
-        
         default:
         {
             std::cout << "Error: unknown type" << std::endl;

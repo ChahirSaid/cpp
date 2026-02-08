@@ -64,7 +64,7 @@ static void printConversions(double value)
     if (std::isnan(value) || std::isinf(value) || value < 0 || value > 127)
         std::cout << "impossible" << std::endl;
     else if (value < 32 || value == 127)
-        std::cout << "Non displayable" << std::endl;
+        std::cout << "non printable" << std::endl;
     else
         std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
     std::cout << "int: ";

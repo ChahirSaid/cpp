@@ -134,11 +134,6 @@ void ScalarConverter::convert(std::string to_convert)
             if (std::isnan(value) || std::isinf(value))
                 break;
             size_t pos = to_convert.find(".");
-            if (pos == std::string::npos)
-            {
-                std::cout << (type == FLOAT ? "float" : "double") << ": error" << std::endl;
-                return;
-            }
             pos = to_convert.find(".", pos + 1);
             if (pos != std::string::npos)
             {

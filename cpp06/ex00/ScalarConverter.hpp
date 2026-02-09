@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 20:35:08 by schahir           #+#    #+#             */
-/*   Updated: 2026/02/08 05:57:07 by schahir          ###   ########.fr       */
+/*   Updated: 2026/02/09 18:16:57 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ enum e_type
     INT,
     FLOAT,
     DOUBLE,
-    SPECIAL
 };
 
 class ScalarConverter

@@ -46,7 +46,7 @@ static int detectType(const std::string& str)
 {
     if (str.size() == 1 && !isdigit(str[0]))
         return CHAR;
-    if (str.size() > 1 && str[str.size() - 1] == 'f')
+    if (str.size() > 1 && str[str.size() - 1] == 'f' &&str.find('.') != std::string::npos) 
         return FLOAT;
     if (str.find('.') != std::string::npos)
         return DOUBLE;

@@ -13,7 +13,12 @@
 #ifndef SERIALIZER_HPP
 # define SERIALIZER_HPP
 
-#include "Data.hpp"
+#include <iostream>
+
+typedef struct
+{
+	
+} Data;
 
 class Serializer
 {

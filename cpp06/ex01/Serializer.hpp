@@ -14,11 +14,14 @@
 # define SERIALIZER_HPP
 
 #include <iostream>
+#include <stdint.h>
+#include <string>
 
-typedef struct
+typedef struct s_data
 {
-	
-} Data;
+	int			value;
+	std::string	name;
+}	Data;
 
 class Serializer
 {
@@ -28,8 +31,8 @@ class Serializer
 		Serializer& operator=(const Serializer& other);
 		~Serializer();
 	public:
-		uintptr_t serialize(Data* ptr);
-		Data* deserialize(uintptr_t raw);
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
 };
 
 #endif

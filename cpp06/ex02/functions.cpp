@@ -6,17 +6,14 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 07:00:00 by schahir           #+#    #+#             */
-/*   Updated: 2026/04/23 14:45:39 by schahir          ###   ########.fr       */
+/*   Updated: 2026/04/27 15:39:30 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
+
 
 Base * generate(void)
 {

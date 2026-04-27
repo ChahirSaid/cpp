@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 07:00:00 by schahir           #+#    #+#             */
-/*   Updated: 2026/04/23 14:45:39 by schahir          ###   ########.fr       */
+/*   Updated: 2026/04/27 13:43:06 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,13 @@ int main(void)
 	{
 		Base* obj = generate();
 
-		std::cout << "Object " << i + 1 << " identified by pointer: ";
+		std::cout << "Object " << i + 1 << "pointer: ";
 		identify(obj);
 
-		std::cout << "Object " << i + 1 << " identified by reference: ";
+		std::cout << "Object " << i + 1 << "reference: ";
 		identify(*obj);
 
 		delete obj;
 		std::cout << std::endl;
 	}
-
-	return 0;
 }

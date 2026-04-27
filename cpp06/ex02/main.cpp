@@ -6,14 +6,11 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 07:00:00 by schahir           #+#    #+#             */
-/*   Updated: 2026/04/27 13:43:06 by schahir          ###   ########.fr       */
+/*   Updated: 2026/04/27 22:48:08 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
 
 Base * generate(void);
 void identify(Base* p);

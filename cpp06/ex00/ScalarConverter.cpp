@@ -45,7 +45,21 @@ void ScalarConverter::convert(std::string to_convert)
         return;
     }
 
-    char* str;
+    size_t i = 0;
+    while (i < to_convert.size())
+    {
+        if (isdigit(to_convert[i]))
+            i++;
+        else if (to_convert[i]== 'f')
+        {
+            std::cout << "invalid input" << std::endl;
+            return;
+        }
+        else
+            break;
+    }
+
+    char *str;
     double val = strtod(to_convert.c_str(), &str);
     if (*str && (*str != 'f' || *(str + 1)))
     {

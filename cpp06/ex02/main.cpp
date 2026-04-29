@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 07:00:00 by schahir           #+#    #+#             */
-/*   Updated: 2026/04/27 22:48:08 by schahir          ###   ########.fr       */
+/*   Updated: 2026/04/29 01:00:16 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,15 @@ int main(void)
 
 		std::cout << "Object " << i + 1 << "pointer: ";
 		identify(obj);
-
-		std::cout << "Object " << i + 1 << "reference: ";
-		identify(*obj);
-
+		try
+		{
+			std::cout << "Object " << i + 1 << "reference: ";
+			identify(*obj);
+		}
+		catch(std::bad_cast &e)
+		{
+			std::cout << "error: " << e.what() << std::endl;
+		}
 		delete obj;
 		std::cout << std::endl;
 	}

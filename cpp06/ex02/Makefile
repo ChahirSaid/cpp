@@ -3,7 +3,7 @@ NAME = 	Identify
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp functions.cpp
+SRC = main.cpp Base.cpp functions.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

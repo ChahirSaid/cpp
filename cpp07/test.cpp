@@ -42,6 +42,14 @@ class A
                 cout << "NULL" << endl;
         }
 };
+template <typename T, typename U>
+
+void ptest(T a, U b)
+{
+    cout << a << "\t";
+    cout << b << endl;
+}
+
 
 int main()
 {
@@ -50,4 +58,8 @@ int main()
     y = x;
     x.print();
     y.print();
+    ptest(2,3.14);
+    ptest<int>(2,3.14);
+    ptest<int, int>(2,3.14);
+    ptest<double>(2,3.14);
 }

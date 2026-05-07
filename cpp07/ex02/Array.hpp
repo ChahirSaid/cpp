@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 10:25:31 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/06 16:22:38 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/07 14:46:27 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,60 @@
 # define ARRAY_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 template <typename T>
 class Array
 {
     private:
-        T* arr;
-        unsigned int len;
+        T* _arr;
+        unsigned int _size;
     public:
-        Array(): arr(NULL), len(0) {};
-        Array(unsigned int n): arr(new T[n]()), len(n) {};
-        Array(const Array& other):arr(NULL), len(other.len)
+        Array(): _arr(NULL), _size(0) {};
+        Array(unsigned int n): _arr(new T[n]()), _size(n) {};
+        Array(const Array& other):_arr(NULL), _size(other._size)
         {
-            if (len)
+            if (_size)
             {
-                arr = new T[len];
-                for (unsigned int i = 0; i < len; i++)
-                    arr[i] = other.arr[i];
+                _arr = new T[_size];
+                for (unsigned int i = 0; i < _size; i++)
+                    _arr[i] = other._arr[i];
             }
         };
         Array& operator=(const Array& other)
         {
             if (this != &other)
             {
-                delete[] arr;
-                len = other.len;
-                if (len)
+                delete[] _arr;
+                _size = other._size;
+                if (_size)
                 {
-                    arr = new T[len];
-                    for (unsigned int i = 0; i < len; i++)
-                        arr[i] = other.arr[i]
+                    _arr = new T[_size];
+                    for (unsigned int i = 0; i < _size; i++)
+                        _arr[i] = other._arr[i];
                 }
                 else
-                    arr = NULL;
+                    _arr = NULL;
             }
             return *this;
         }
-        ~Array() {delete[] arr;};
+        ~Array() {delete[] _arr;};
+        T& operator[](unsigned int i)
+        {
+            if (i >= _size)
+                throw std::out_of_range("Index out of bounds!");
+            return _arr[i];
+        }
+        const T& operator[](unsigned int i) const
+        {
+            if (i >= _size)
+                throw std::out_of_range("Index out of bounds!");
+            return _arr[i];
+        }
+        unsigned int size() const
+        {
+            return _size;
+        }
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 16:22:40 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/16 17:22:59 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/17 00:15:02 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <set>
+#include <ctime>
+#include <vector>
+#include <algorithm>
+#include <climits>
 
 class Span
 {
     private:
-        std::set<int> S;
+        std::vector<int> vec;
         unsigned int N;
     public:
         Span();

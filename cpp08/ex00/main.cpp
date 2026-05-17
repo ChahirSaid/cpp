@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 09:30:17 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/16 15:55:22 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/17 21:49:27 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
         }
         for (int i = 0; i < 10; i++)
         {
-            std::cout << i << " ";
+            std::cout << vec[i] << " ";
         }
         std::cout << std::endl;
         try
@@ -37,14 +37,13 @@ int main()
     }
     {
         std::list<int> lst;
+        std::list<int>::iterator it;
         for (int i = 0; i < 10; i++)
         {
             lst.push_back(i);
         }
-        for (int i = 0; i < 10; i++)
-        {
-            std::cout << i << " ";
-        }
+       for (it = lst.begin(); it != lst.end(); ++it)
+            std::cout << *it << " ";
         std::cout << std::endl;
         try
         {
@@ -62,14 +61,14 @@ int main()
         {
             dq.push_back(i);
         }
-        for (int i = 0; i < 5; i++)
+
+        for (int i = 4; i >= 0; i--)
         {
-            
             dq.push_front(i);
         }
         for (int i = 0; i < 10; i++)
         {
-            std::cout << i << " ";
+            std::cout << dq[i] << " ";
         }
         std::cout << std::endl;
         try

@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 14:51:20 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/18 15:08:59 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/18 22:48:11 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 
 template <typename T>
 
-class MutantStack
+class MutantStack : public std::stack T
 {
-    private:
     public:
-        void push(T element);
-        void pop();
-        T top();
-        size_t size();
-        bool empty();
+        typedef typename std::stack <T>::container_type::iterator               iterator;
+        typedef typename std::stack <T>::container_type::const_iterator         const_iterator;
+        typedef typename std::stack <T>::container_type::reverse_iterator       reverse_iterator;
+        typedef typename std::stack <T>::container_type::const_reverse_iterator const_reverse_iterator;
+        
+        
 };
 
 #endif

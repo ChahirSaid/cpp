@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 09:30:17 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/17 21:49:27 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/18 13:46:59 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main()
         {
             vec.push_back(i);
         }
-        for (int i = 0; i < 10; i++)
+        for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
         {
-            std::cout << vec[i] << " ";
+            std::cout << *it << " ";
         }
         std::cout << std::endl;
         try
@@ -37,12 +37,11 @@ int main()
     }
     {
         std::list<int> lst;
-        std::list<int>::iterator it;
         for (int i = 0; i < 10; i++)
         {
             lst.push_back(i);
         }
-       for (it = lst.begin(); it != lst.end(); ++it)
+       for (std::list<int>::iterator it = lst.begin(); it != lst.end(); ++it)
             std::cout << *it << " ";
         std::cout << std::endl;
         try
@@ -66,9 +65,9 @@ int main()
         {
             dq.push_front(i);
         }
-        for (int i = 0; i < 10; i++)
+        for (std::deque<int>::iterator it = dq.begin(); it != dq.end(); ++it)
         {
-            std::cout << dq[i] << " ";
+            std::cout << *it << " ";
         }
         std::cout << std::endl;
         try

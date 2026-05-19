@@ -6,16 +6,20 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 16:22:33 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/17 00:20:17 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/19 15:10:54 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
 Span::Span() :N(0)
-{}
+{
+    vec.reserve(N);
+}
 Span::Span(unsigned int N) : N(N)
-{}
+{
+    vec.reserve(N);
+}
 Span::Span(const Span& other): vec(other.vec), N(other.N)
 {}
 Span& Span::operator=(const Span& other)
@@ -32,14 +36,6 @@ void Span::addNumber(int number)
     if (vec.size() >= N)
             throw std::runtime_error("max size reached");
     vec.push_back(number);
-}
-
-void Span::addMulti(unsigned int number)
-{
-    for (unsigned int i = 0; i < number; i++)
-    {
-        addNumber(std::rand());
-    }
 }
 
 int Span::shortestSpan()

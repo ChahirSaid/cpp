@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 16:22:33 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/19 15:10:54 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/19 21:59:33 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ Span& Span::operator=(const Span& other)
     }
     return *this;
 }
+
+Span::~Span()
+{}
 void Span::addNumber(int number)
 {
     if (vec.size() >= N)

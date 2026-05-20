@@ -6,7 +6,7 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 14:51:20 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/19 22:45:02 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/20 13:53:32 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ class MutantStack : public std::stack <T>
         MutantStack(){};
         MutantStack(const MutantStack &other) : std::stack<T>(other){};
         MutantStack &operator=(const MutantStack &other){
-            if (*this != other)
-            {
+            if (this != &other)
                 std::stack<T>::operator=(other);
-                return (*this);
-            }
+            return (*this);
         };
         ~MutantStack(){};
         typedef typename std::stack <T>::container_type::iterator               iterator;

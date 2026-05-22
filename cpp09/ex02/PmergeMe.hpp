@@ -6,7 +6,11 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:31:48 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/22 17:31:49 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/22 17:41:38 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PMERGEME_HPP
+# define PMERGEME_HPP
+
+#endif

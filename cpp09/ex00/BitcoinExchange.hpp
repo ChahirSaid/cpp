@@ -6,7 +6,11 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:31:26 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/22 17:31:27 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/22 17:34:34 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BITCOINEXCHANGE_HPP
+# define BITCOINEXCHANGE_HPP
+
+#endif

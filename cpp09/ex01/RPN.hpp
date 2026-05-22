@@ -6,7 +6,11 @@
 /*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:31:39 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/22 17:31:40 by schahir          ###   ########.fr       */
+/*   Updated: 2026/05/22 17:41:07 by schahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RPN_HPP
+# define  RPN_HPP
+
+#endif

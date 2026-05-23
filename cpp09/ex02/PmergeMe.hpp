@@ -32,43 +32,11 @@ class PmergeMe
 		PmergeMe(const PmergeMe& other);
 		PmergeMe& operator=(const PmergeMe& other);
 
-		template <typename T>
-		void insertionSort(T& container)
-		{
-			for (size_t i = 1; i < container.size(); i++)
-			{
-				int key = container[i];
-				int j = i - 1;
-				while (j >= 0 && container[j] > key)
-				{
-					container[j + 1] = container[j];
-					j--;
-				}
-				container[j + 1] = key;
-			}
-		}
-
-		template <typename T>
-		void mergeInsertSort(T& container)
-		{
-			if (container.size() <= 1)
-				return;
-
-			if (container.size() < 16)
-			{
-				insertionSort(container);
-				return;
-			}
-
-			typename T::iterator mid = container.begin() + container.size() / 2;
-			T left(container.begin(), mid);
-			T right(mid, container.end());
-
-			mergeInsertSort(left);
-			mergeInsertSort(right);
-
-			std::merge(left.begin(), left.end(), right.begin(), right.end(), container.begin());
-		}
+		template <typename Container, typename PairContainer>
+		void mergeInsertSort(Container& container);
+		
+		template <typename Container>
+		void display(const Container& container, const std::string& str);
 
 	public:
 		PmergeMe();

@@ -1,58 +1,35 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: schahir <schahir@student.1337.ma>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/22 17:31:48 by schahir           #+#    #+#             */
-/*   Updated: 2026/05/22 17:41:38 by schahir          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PMERGEME_HPP
-# define PMERGEME_HPP
+#define PMERGEME_HPP
 
 #include <iostream>
 #include <vector>
-#include <deque>
+#include <list>
 #include <string>
 #include <sstream>
 #include <algorithm>
 #include <ctime>
-#include <exception>
-#include <climits>
 
-class PmergeMe
-{
-	private:
-		std::vector<int> _vec;
-		std::deque<int> _deq;
+class PmergeMe {
+public:
+    PmergeMe();
+    PmergeMe(const PmergeMe& other);
+    PmergeMe& operator=(const PmergeMe& other);
+    ~PmergeMe();
 
-		PmergeMe(const PmergeMe& other);
-		PmergeMe& operator=(const PmergeMe& other);
+    void sortAndPrint(int argc, char** argv);
 
-		template <typename Container, typename PairContainer>
-		void mergeInsertSort(Container& container);
-		
-		template <typename Container>
-		void display(const Container& container, const std::string& str);
+private:
+    std::vector<int> _vec;
+    std::list<int> _list;
 
-	public:
-		PmergeMe();
-		~PmergeMe();
+    template <typename T>
+    void printContainer(const T& container, const std::string& name);
 
-		void parse(int ac, char **av);
-		void sort();
+    void mergeInsertSort(std::vector<int>& vec);
+    void insertionSort(std::vector<int>& vec);
 
-		class InvalidInputException;
-		
+    void mergeInsertSort(std::list<int>& lst);
+    void insertionSort(std::list<int>& lst);
 };
 
-class PmergeMe::InvalidInputException : public std::exception
-{
-	public:
-		virtual const char* what() const throw();
-};
-
-#endif
+#endif 

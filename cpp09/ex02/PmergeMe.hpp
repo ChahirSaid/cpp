@@ -1,35 +1,35 @@
-#ifndef PMERGEME_HPP
-#define PMERGEME_HPP
+#pragma once
 
 #include <iostream>
-#include <vector>
-#include <list>
 #include <string>
-#include <sstream>
-#include <algorithm>
+#include <vector>
+#include <deque>
+#include <cstdlib>
+#include <climits>
 #include <ctime>
+#include <iomanip>
+#include <algorithm>
 
-class PmergeMe {
-public:
-    PmergeMe();
-    PmergeMe(const PmergeMe& other);
-    PmergeMe& operator=(const PmergeMe& other);
-    ~PmergeMe();
+class PmergeMe
+{
+    private:
+        std::vector<int> _vec;
+        std::deque<int> _deq;
 
-    void sortAndPrint(int argc, char** argv);
+        void validateInput(char **argv);
+        void printSequence(const std::string &prefix, const std::vector<int> &seq) const;
+        std::vector<size_t> generateJacobsthal(size_t n);
 
-private:
-    std::vector<int> _vec;
-    std::list<int> _list;
+        template <typename Container>
+        void mergeInsertSort(Container &arr);
 
-    template <typename T>
-    void printContainer(const T& container, const std::string& name);
+        void sortBoth(bool i);
 
-    void mergeInsertSort(std::vector<int>& vec);
-    void insertionSort(std::vector<int>& vec);
+    public:
+        PmergeMe();
+        PmergeMe(const PmergeMe &other);
+        PmergeMe &operator=(const PmergeMe &other);
+        ~PmergeMe();
 
-    void mergeInsertSort(std::list<int>& lst);
-    void insertionSort(std::list<int>& lst);
+        void merge(char **argv);
 };
-
-#endif 

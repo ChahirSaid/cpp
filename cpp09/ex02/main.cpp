@@ -1,13 +1,15 @@
 #include "PmergeMe.hpp"
 
-int main(int argc, char** argv) {
-    if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <positive_integer_sequence>" << std::endl;
+int main(int argc, char **argv)
+{
+    if (argc < 2)
+    {
+        std::cerr << "invalid number of arguments(!= 1)." << std::endl;
         return 1;
     }
 
-    PmergeMe pmergeme;
-    pmergeme.sortAndPrint(argc, argv);
+    PmergeMe sorter;
+    sorter.merge(argv);
 
     return 0;
 }
